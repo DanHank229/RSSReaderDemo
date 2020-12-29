@@ -1,8 +1,5 @@
-# ebus-ks-ios
-README
+# DemoRSSReader
 
-DemoRSSReader
----
 簡單的RSS閱讀器
 可自行新增喜歡的網址或是RSS網址
 ---
