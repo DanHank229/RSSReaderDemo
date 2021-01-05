@@ -52,33 +52,6 @@ class HomeVC: UIViewController {
         self.navigationItem.leftBarButtonItem = MenuManager.instance.setNavigationMenuBtn()
     }
     
-    // 選擇閱讀器模式
-    private func selectReaderMode(link: String) {
-        let isRSSLink: Bool = link.contains("rss")
-        
-        guard let url: URL = URL(string: link) else {
-            print("Warring!\nIt's URL String not Valid.")
-            return
-        }
-        if url.scheme == nil {
-            print("qwe")
-            return
-        }
-        
-        if isRSSLink == true {
-            self.pushVC(vc: RSSVC(url: url))
-            print("is RSS.")
-        } else {
-            self.pushVC(vc: WebVC(url: url))
-            print("is Web.")
-        }
-    }
-    
-    private func pushVC(vc: UIViewController) {
-        print("Link Start.")
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     //  Set Navegation Button Add, Edit. 導覽 新增 編輯按鈕.
     private func setNavigationAddFavoriteBtn() -> [UIBarButtonItem] {
         let add = UIBarButtonItem(
@@ -96,17 +69,90 @@ class HomeVC: UIViewController {
     
     @objc
     private func showAddView() {
-        // 開啟add輸入畫面
+        // 開啟add(新增)輸入畫面
         self.showCustomView(mode: .Add)
+        // 新增時如果還在編輯模式, 切至關閉
+        if self.tableView.isEditing == true {
+            switchEditMode()
+        }
     }
     
     @objc
     private func switchEditMode() {
+        // 開關編輯模式
         self.tableView.isEditing = !self.tableView.isEditing
         self.tableView.reloadData()
     }
+}
+
+// Cell Delegate.
+extension HomeVC: TableViewCellActionDelegate {
+    // Cell內按鈕按下後執行對應Func
+    func edit(_ indexPath: IndexPath) {
+        self.showCustomView(mode: .Edit, indexPath: indexPath)
+    }
     
-    // Add, Delete, Edit Custom View.
+    func delete(_ indexPath: IndexPath) {
+        self.showCustomView(mode: .Delete, indexPath: indexPath)
+    }
+}
+
+// DataSource and Delegate.
+extension HomeVC: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.favoriteData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell",for: indexPath)
+        let _cell = cell as? HomeCell
+        let data = favoriteData[indexPath.row]
+        _cell?.delegate = self
+        _cell?.present(data: data, isEdit: self.tableView.isEditing, indexPath: indexPath)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        let data = self.favoriteData[indexPath.row]
+        self.selectReaderMode(link: data.url)
+    }
+}
+
+// Fnuc
+extension HomeVC {
+    // 選擇閱讀器模式
+    private func selectReaderMode(link: String) {
+        let isRSSLink: Bool = link.contains("rss") && link.contains("xml")
+        // 刪除前後空白並Encoded.
+        let _url = link.urlEncoded()
+        
+        guard let url: URL = URL(string: _url) else {
+            Debug.println(msg: "Warring!\nIt's URL String not Valid.")
+            return
+        }
+        
+        if url.host == nil {
+            Debug.println(msg: "HomeVC url.host is nil.")
+            return
+        }
+        
+        if isRSSLink == true {
+            self.pushVC(vc: RSSVC(url: url))
+            Debug.println(msg: "is RSS")
+        } else {
+            self.pushVC(vc: WebVC(url: url))
+            Debug.println(msg: "is Web")
+        }
+    }
+    
+    private func pushVC(vc: UIViewController) {
+        Debug.println(msg: "Link Start.")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    // Add, Delete, Edit Custom View. 選擇自訂通用View功能.
     private func showCustomView(mode: FavoriteMode, indexPath: IndexPath? = nil) {
         let frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         switch mode {
@@ -124,6 +170,7 @@ class HomeVC: UIViewController {
             view.setActionBlock(action: action)
             
             UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.addSubview(view)
+            
         case .Edit:
             let view = EditFavoriteView(frame: frame, mode: .Edit)
             let action = {
@@ -159,47 +206,8 @@ class HomeVC: UIViewController {
             present(controller, animated: true, completion: nil)
             
         default:
-            print("GG Noting.")
+            Debug.println(msg: "Switch Custom View Type default.")
         }
-    }
-}
-
-// Cell Delegate, Button Action.
-extension HomeVC: TableViewCellActionDelegate {
-    
-    func edit(_ indexPath: IndexPath) {
-        self.showCustomView(mode: .Edit, indexPath: indexPath)
-    }
-    
-    func delete(_ indexPath: IndexPath) {
-        self.showCustomView(mode: .Delete, indexPath: indexPath)
-    }
-}
-
-// DataSource and Delegate.
-extension HomeVC: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.favoriteData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell",for: indexPath)
-        let _cell = cell as? HomeCell
-        let data = favoriteData[indexPath.row]
-        _cell?.delegate = self
-        _cell?.present(data: data, isEdit: self.tableView.isEditing, indexPath: indexPath)
-        return cell
-    }
-
-}
-
-// Cell Select.
-extension HomeVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        let data = self.favoriteData[indexPath.row]
-        self.selectReaderMode(link: data.url)
     }
 }
 

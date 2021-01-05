@@ -148,9 +148,6 @@ extension RSSVC: UITableViewDelegate {
         let urlString = self.allData[indexPath.row].link
         guard let url = URL(string: urlString) else { return }
         
-        // 啟動內建safari方案
-//        useSFSafaruVC(url: url)
-        
         // push.
         usePushPage(url: url)
     }
@@ -158,23 +155,6 @@ extension RSSVC: UITableViewDelegate {
     private func usePushPage(url: URL) {
         let webVC = WebVC(url: url)
         self.navigationController?.pushViewController(webVC, animated: true)
-    }
-    
-    private func usePresentPage(url: URL) {
-        let webVC = WebVC(url: url)
-        self.present(webVC, animated: true) {
-        }
-    }
-}
-
-extension RSSVC: SFSafariViewControllerDelegate {
-    private func useSFSafaruVC(url: URL) {
-        let safariVC = SFSafariViewController(url: url)
-        safariVC.preferredBarTintColor = .black
-        safariVC.preferredControlTintColor = .white
-        safariVC.dismissButtonStyle = .close
-        safariVC.delegate = self
-        self.present(safariVC, animated: true, completion: nil)
     }
 }
 

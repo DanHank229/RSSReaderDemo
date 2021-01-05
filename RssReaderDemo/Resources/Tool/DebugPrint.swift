@@ -13,7 +13,7 @@ class Debug  {
         #if DEBUG
         let file = (fileName as NSString ).lastPathComponent
 //        print("\(file).\(line) - \(function): \(msg)")
-        print("\(msg) (in \(file).\(line) - \(function))")
+        print("\(msg)           (in \(file).\(line) - \(function))")
         #endif
     }
 }

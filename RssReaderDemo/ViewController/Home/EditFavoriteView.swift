@@ -52,7 +52,7 @@ class EditFavoriteView: UIView {
     
     private func initView() {
         self.backgroundView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
-        self.contentView.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+        self.contentView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
         self.titleLabel.text = "新增"
         self.nameLabel.text = "名稱"
         self.urlLabel.text = "網址"
@@ -108,22 +108,22 @@ extension EditFavoriteView {
         // Add新增資料至db, Edit修改資料存入
         switch mode {
         case .Add:
+            if self.dataCheckInfo() != true { return }
             guard let name = self.nameTextField.text else { return }
             guard let url = self.urlTextField.text else { return }
-            if name.count == 0 || url.count == 0 {
-                return
-            }
-            MOFavoriteURL.createWith(name: name, url: url)
+            
+            let urlEncoded = url.trimmingCharacters(in: .whitespacesAndNewlines).urlEncoded()
+            MOFavoriteURL.createWith(name: name, url: urlEncoded)
             self.edited = true
             
         case .Edit:
+            if self.dataCheckInfo() != true { return }
             guard let name = self.nameTextField.text else { return }
             guard let url = self.urlTextField.text else { return }
-            if name.count == 0 || url.count == 0 {
-                return
-            }
+            
             guard let data = originData else { return }
-            MOFavoriteURL.editWith(data: data, newSeq: data.seq, newName: name, newURL: url)
+            let urlEncoded = url.trimmingCharacters(in: .whitespacesAndNewlines).urlEncoded()
+            MOFavoriteURL.editWith(data: data, newSeq: data.seq, newName: name, newURL: urlEncoded)
             self.edited = true
             
         default:
@@ -132,15 +132,38 @@ extension EditFavoriteView {
         self.closeView()
     }
     
+    // 檢查資料可用性及提醒
+    private func dataCheckInfo() -> Bool {
+        guard let name = self.nameTextField.text else { return false }
+        guard let url = self.urlTextField.text else { return false }
+        
+        switch (name.count, url.count) {
+        case (0, 0):
+            self.backgroundView.showToast(text: "請輸入名稱及網址")
+            return false
+        case (0, 1...):
+            self.backgroundView.showToast(text: "請輸入名稱")
+            return false
+        case (1..., 0):
+            self.backgroundView.showToast(text: "請輸入網址")
+            return false
+        case (1..., 1...):
+            let url = url.trimmingCharacters(in: .whitespacesAndNewlines).urlEncoded()
+            guard let _ = URL(string: url) else {
+                self.backgroundView.showToast(text: "網址不能識別 請重新輸入")
+                return false
+            }
+            return true
+            
+        default:
+            self.backgroundView.showToast(text: "網址不能識別 請重新輸入")
+            Debug.println(msg: "NOOO")
+            return false
+        }
+    }
+    
     // Close Custom View.
     @IBAction func cancelBtnAction(_ sender: UIButton) {
         self.closeView()
     }
-}
-
-enum FavoriteMode {
-    case Add
-    case Edit
-    case Delete
-    case NotSelect
 }
