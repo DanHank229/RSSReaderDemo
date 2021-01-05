@@ -10,6 +10,8 @@
 		3CBB464D90317BB3EA7246E2 /* Pods_RssReaderDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B40D18DD09FB7D6F536A6E /* Pods_RssReaderDemo.framework */; };
 		5C040204256E0137001D020B /* RSSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C040202256E0137001D020B /* RSSCell.swift */; };
 		5C040205256E0137001D020B /* RSSCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C040203256E0137001D020B /* RSSCell.xib */; };
+		5C4AB24825A423DC00F2776E /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB24725A423DC00F2776E /* UIView+Toast.swift */; };
+		5C4AB28A25A4503100F2776E /* URLEncdodedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB28925A4503100F2776E /* URLEncdodedTests.swift */; };
 		5C4B24EE257781F300495003 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B24EC257781F300495003 /* HomeVC.swift */; };
 		5C4B24EF257781F300495003 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4B24ED257781F300495003 /* HomeVC.xib */; };
 		5C4DDB202593ACB500D33C98 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DDB1E2593ACB500D33C98 /* HomeCell.swift */; };
@@ -18,6 +20,8 @@
 		5C4DDB272593B1EE00D33C98 /* EditFavoriteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DDB252593B1EE00D33C98 /* EditFavoriteView.xib */; };
 		5C70C94A25789302000416B6 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C70C94825789302000416B6 /* MenuVC.swift */; };
 		5C70C94B25789302000416B6 /* MenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C70C94925789302000416B6 /* MenuVC.xib */; };
+		5C75B43D25A3848800FE4C51 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75B43C25A3848800FE4C51 /* String+URL.swift */; };
+		5C75B44025A38D4800FE4C51 /* FavoriteMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75B43F25A38D4800FE4C51 /* FavoriteMode.swift */; };
 		5C76A32C2583275F0026A863 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76A32A2583275F0026A863 /* MenuCell.swift */; };
 		5C76A32D2583275F0026A863 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C76A32B2583275F0026A863 /* MenuCell.xib */; };
 		5C76A33C25879A7C0026A863 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76A33B25879A7C0026A863 /* SceneDelegate.swift */; };
@@ -38,10 +42,25 @@
 		5CF79DED258AED00005C621F /* SideMenu+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF79DEC258AED00005C621F /* SideMenu+Ex.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5C4AB27E25A44FFB00F2776E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CCF7A592563C08000922E30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CCF7A602563C08000922E30;
+			remoteInfo = RssReaderDemo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		4B9E748EDF064385E1287D58 /* Pods-RssReaderDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RssReaderDemo.release.xcconfig"; path = "Target Support Files/Pods-RssReaderDemo/Pods-RssReaderDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5C040202256E0137001D020B /* RSSCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSCell.swift; sourceTree = "<group>"; };
 		5C040203256E0137001D020B /* RSSCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RSSCell.xib; sourceTree = "<group>"; };
+		5C4AB24725A423DC00F2776E /* UIView+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
+		5C4AB27925A44FFB00F2776E /* RssReaderDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RssReaderDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C4AB27D25A44FFB00F2776E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C4AB28825A4503100F2776E /* RssReaderDemoTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RssReaderDemoTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		5C4AB28925A4503100F2776E /* URLEncdodedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = URLEncdodedTests.swift; path = RssReaderDemo/Resources/Tool/URLEncdodedTests.swift; sourceTree = SOURCE_ROOT; };
 		5C4B24EC257781F300495003 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		5C4B24ED257781F300495003 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		5C4DDB1E2593ACB500D33C98 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
@@ -50,6 +69,8 @@
 		5C4DDB252593B1EE00D33C98 /* EditFavoriteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditFavoriteView.xib; sourceTree = "<group>"; };
 		5C70C94825789302000416B6 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuVC.swift; path = RssReaderDemo/ViewController/Menu/MenuVC.swift; sourceTree = SOURCE_ROOT; };
 		5C70C94925789302000416B6 /* MenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MenuVC.xib; path = RssReaderDemo/ViewController/Menu/MenuVC.xib; sourceTree = SOURCE_ROOT; };
+		5C75B43C25A3848800FE4C51 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
+		5C75B43F25A38D4800FE4C51 /* FavoriteMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMode.swift; sourceTree = "<group>"; };
 		5C76A32A2583275F0026A863 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		5C76A32B2583275F0026A863 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		5C76A33B25879A7C0026A863 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +96,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5C4AB27625A44FFB00F2776E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5CCF7A5E2563C08000922E30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,6 +127,24 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		5C4AB27A25A44FFB00F2776E /* RssReaderDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5C4AB28725A4500F00F2776E /* Extension */,
+				5C4AB27D25A44FFB00F2776E /* Info.plist */,
+			);
+			path = RssReaderDemoTests;
+			sourceTree = "<group>";
+		};
+		5C4AB28725A4500F00F2776E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5C4AB28925A4503100F2776E /* URLEncdodedTests.swift */,
+				5C4AB28825A4503100F2776E /* RssReaderDemoTests-Bridging-Header.h */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		5C4B2500257793BB00495003 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +154,7 @@
 				5C4DDB1F2593ACB500D33C98 /* HomeCell.xib */,
 				5C4B24EC257781F300495003 /* HomeVC.swift */,
 				5C4B24ED257781F300495003 /* HomeVC.xib */,
+				5C75B43F25A38D4800FE4C51 /* FavoriteMode.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -135,6 +182,7 @@
 		5C4B2503257794EE00495003 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5C75B43525A37FDC00FE4C51 /* Extension */,
 				5CCBA98C25994FB70067A197 /* Tool */,
 				5C4B25042577951100495003 /* Database */,
 			);
@@ -160,6 +208,15 @@
 				5C70C94925789302000416B6 /* MenuVC.xib */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		5C75B43525A37FDC00FE4C51 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5C75B43C25A3848800FE4C51 /* String+URL.swift */,
+				5C4AB24725A423DC00F2776E /* UIView+Toast.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		5C7BF2B925910E3400D3A9AB /* CoreData */ = {
@@ -192,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				5CCF7A632563C08000922E30 /* RssReaderDemo */,
+				5C4AB27A25A44FFB00F2776E /* RssReaderDemoTests */,
 				5CCF7A622563C08000922E30 /* Products */,
 				CCC6B1C106036C72A2FE9793 /* Pods */,
 				D6C8073BD6B30FE198E40A54 /* Frameworks */,
@@ -202,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				5CCF7A612563C08000922E30 /* RssReaderDemo.app */,
+				5C4AB27925A44FFB00F2776E /* RssReaderDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,6 +300,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5C4AB27825A44FFB00F2776E /* RssReaderDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C4AB28025A44FFB00F2776E /* Build configuration list for PBXNativeTarget "RssReaderDemoTests" */;
+			buildPhases = (
+				5C4AB27525A44FFB00F2776E /* Sources */,
+				5C4AB27625A44FFB00F2776E /* Frameworks */,
+				5C4AB27725A44FFB00F2776E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C4AB27F25A44FFB00F2776E /* PBXTargetDependency */,
+			);
+			name = RssReaderDemoTests;
+			productName = RssReaderDemoTests;
+			productReference = 5C4AB27925A44FFB00F2776E /* RssReaderDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5CCF7A602563C08000922E30 /* RssReaderDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CCF7A782563C08400922E30 /* Build configuration list for PBXNativeTarget "RssReaderDemo" */;
@@ -266,10 +343,15 @@
 		5CCF7A592563C08000922E30 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = 9s;
 				TargetAttributes = {
+					5C4AB27825A44FFB00F2776E = {
+						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
+						TestTargetID = 5CCF7A602563C08000922E30;
+					};
 					5CCF7A602563C08000922E30 = {
 						CreatedOnToolsVersion = 11.6;
 					};
@@ -289,11 +371,19 @@
 			projectRoot = "";
 			targets = (
 				5CCF7A602563C08000922E30 /* RssReaderDemo */,
+				5C4AB27825A44FFB00F2776E /* RssReaderDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5C4AB27725A44FFB00F2776E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5CCF7A5F2563C08000922E30 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -357,6 +447,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5C4AB27525A44FFB00F2776E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C4AB28A25A4503100F2776E /* URLEncdodedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5CCF7A5D2563C08000922E30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,6 +462,7 @@
 				5CBE8A8A256CCC8700DB3C08 /* WebVC.swift in Sources */,
 				5CF79DED258AED00005C621F /* SideMenu+Ex.swift in Sources */,
 				5C4DDB202593ACB500D33C98 /* HomeCell.swift in Sources */,
+				5C4AB24825A423DC00F2776E /* UIView+Toast.swift in Sources */,
 				5CCF7A652563C08000922E30 /* AppDelegate.swift in Sources */,
 				5C76A32C2583275F0026A863 /* MenuCell.swift in Sources */,
 				5C040204256E0137001D020B /* RSSCell.swift in Sources */,
@@ -375,12 +474,22 @@
 				5C70C94A25789302000416B6 /* MenuVC.swift in Sources */,
 				5C7BF2BB25910E4D00D3A9AB /* CoreDataManager.swift in Sources */,
 				5C76A33C25879A7C0026A863 /* SceneDelegate.swift in Sources */,
+				5C75B43D25A3848800FE4C51 /* String+URL.swift in Sources */,
 				5C4DDB262593B1EE00D33C98 /* EditFavoriteView.swift in Sources */,
+				5C75B44025A38D4800FE4C51 /* FavoriteMode.swift in Sources */,
 				5CCBA98E25994FCC0067A197 /* DebugPrint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C4AB27F25A44FFB00F2776E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CCF7A602563C08000922E30 /* RssReaderDemo */;
+			targetProxy = 5C4AB27E25A44FFB00F2776E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5CCF7A722563C08400922E30 /* LaunchScreen.storyboard */ = {
@@ -394,6 +503,55 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5C4AB28125A44FFB00F2776E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2546MJLNV3;
+				INFOPLIST_FILE = RssReaderDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.9s.RssReaderDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RssReaderDemoTests/Extension/RssReaderDemoTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RssReaderDemo.app/RssReaderDemo";
+			};
+			name = Debug;
+		};
+		5C4AB28225A44FFB00F2776E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2546MJLNV3;
+				INFOPLIST_FILE = RssReaderDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.9s.RssReaderDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RssReaderDemoTests/Extension/RssReaderDemoTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RssReaderDemo.app/RssReaderDemo";
+			};
+			name = Release;
+		};
 		5CCF7A762563C08400922E30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -514,14 +672,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020122801;
+				CURRENT_PROJECT_VERSION = 2021010501;
 				DEVELOPMENT_TEAM = 2546MJLNV3;
 				INFOPLIST_FILE = RssReaderDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.9s.RssReaderDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -535,14 +693,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020122801;
+				CURRENT_PROJECT_VERSION = 2021010501;
 				DEVELOPMENT_TEAM = 2546MJLNV3;
 				INFOPLIST_FILE = RssReaderDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.9s.RssReaderDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -553,6 +711,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5C4AB28025A44FFB00F2776E /* Build configuration list for PBXNativeTarget "RssReaderDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C4AB28125A44FFB00F2776E /* Debug */,
+				5C4AB28225A44FFB00F2776E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5CCF7A5C2563C08000922E30 /* Build configuration list for PBXProject "RssReaderDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
